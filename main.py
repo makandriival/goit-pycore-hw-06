@@ -51,13 +51,13 @@ class AddressBook(UserDict):
     def add_record(self, record):
         self.data[record.name.value] = record
 
-    def remove_record(self, name):
+    def delete(self, name):
         if name in self.data:
             del self.data[name]
         else:
             raise ValueError("Contact not found")
 
-    def find_record(self, name):
+    def find(self, name):
         return self.data.get(name, None)
 
     def __str__(self):
